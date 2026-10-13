@@ -16,7 +16,7 @@ class ObatController extends Controller
 
     public function create()
     {
-        return view('admin.obat.create');
+        return view('admin.obat.create');   
     }
 
     public function store(Request $request)

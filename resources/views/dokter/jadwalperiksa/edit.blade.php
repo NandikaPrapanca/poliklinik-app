@@ -2,7 +2,7 @@
 
     {{-- Header --}}
     <div class="flex items-center gap-3 mb-6">
-        <a href="{{ route('jadwal-periksa.index') }}" class="flex items-center justify-center w-9 h-9 rounded-lg 
+        <a href="{{ route('jadwalperiksa.index') }}" class="flex items-center justify-center w-9 h-9 rounded-lg 
                   bg-slate-100 hover:bg-slate-200 
                   text-slate-600 transition">
             <i class="fas fa-arrow-left text-sm"></i>
@@ -17,7 +17,7 @@
     <div class="card bg-base-100 shadow-md rounded-2xl border border-slate-200">
         <div class="card-body p-8">
 
-            <form action="{{ route('jadwal-periksa.update', $jadwalPeriksa->id) }}" method="POST">
+            <form action="{{ route('jadwalperiksa.update', $jadwalPeriksa->id) }}" method="POST">
                 @csrf
                 @method('PUT')
 
@@ -81,7 +81,7 @@
                         <i class="fas fa-save mr-1"></i> Update
                     </button>
 
-                    <a href="{{ route('jadwal-periksa.index') }}"
+                    <a href="{{ route('jadwalperiksa.index') }}"
                         class="px-6 py-2.5 rounded-lg bg-slate-100 hover:bg-slate-200 
                                text-slate-600 font-semibold text-sm transition">
                         Batal

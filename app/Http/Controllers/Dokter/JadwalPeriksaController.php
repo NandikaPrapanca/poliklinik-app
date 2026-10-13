@@ -40,12 +40,13 @@ class JadwalPeriksaController extends Controller
             ->with('type', 'success');
     }
 
-    public function edit(JadwalPeriksa $jadwalPeriksa)
+    public function edit(JadwalPeriksa $jadwalperiksa)
     {
+        $jadwalPeriksa = $jadwalperiksa;
         return view('dokter.jadwalperiksa.edit', compact('jadwalPeriksa'));
     }
 
-    public function update(Request $request, JadwalPeriksa $jadwalPeriksa)
+    public function update(Request $request, JadwalPeriksa $jadwalperiksa)
     {
         $request->validate([
             'hari'        => 'required|string|max:10',
@@ -53,7 +54,7 @@ class JadwalPeriksaController extends Controller
             'jam_selesai' => 'required|date_format:H:i|after:jam_mulai',
         ]);
 
-        $jadwalPeriksa->update([
+        $jadwalperiksa->update([
             'hari'        => $request->hari,
             'jam_mulai'   => $request->jam_mulai,
             'jam_selesai' => $request->jam_selesai,
@@ -64,9 +65,9 @@ class JadwalPeriksaController extends Controller
             ->with('type', 'success');
     }
 
-    public function destroy(JadwalPeriksa $jadwalPeriksa)
+    public function destroy(JadwalPeriksa $jadwalperiksa)
     {
-        $jadwalPeriksa->delete();
+        $jadwalperiksa->delete();
 
         return redirect()->route('jadwalperiksa.index')
             ->with('message', 'Jadwal periksa berhasil dihapus')
