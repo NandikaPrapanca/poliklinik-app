@@ -24,7 +24,7 @@ class ObatController extends Controller
         $request->validate([
             'nama_obat' => 'required|string|max:255',
             'kemasan'   => 'nullable|string|max:35',
-            'harga'     => 'required|integer|min:0',
+            'harga'     => 'required|numeric|min:0',
         ]);
 
         Obat::create([
@@ -48,7 +48,7 @@ class ObatController extends Controller
         $request->validate([
             'nama_obat' => 'required|string|max:255',
             'kemasan'   => 'nullable|string|max:35',
-            'harga'     => 'required|integer|min:0',
+            'harga'     => 'required|numeric|min:0',
         ]);
 
         $obat->update([
